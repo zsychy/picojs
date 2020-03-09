@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<title>pico.js: face detection in JavaScript</title>
-		<script src="../pico.min.js"></script> <!-- generated with https://jscompress.com/ -->
+		<script src="../pico.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	</head>
 	<body>
@@ -28,9 +28,9 @@
 		/*
 			prepare the image and canvas context
 		*/
-		var img = document.getElementById('image');
 		var ctx = document.getElementById('canvas').getContext('2d');
-		ctx.drawImage(img, 0, 0);
+		var img = document.getElementById('image');
+		img.onload = () => ctx.drawImage(img, 0, 0);
 		/*
 			a function to transform an RGBA image to grayscale
 		*/
